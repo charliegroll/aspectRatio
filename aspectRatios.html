@@ -3,42 +3,82 @@
 <html>
   <head>
     <title>Aspect Ratios Extension's Popup</title>
-    <style>
-      body {
-        min-width: 257px;
-        overflow-x: hidden;
-        font-family: Oxygen, 'Helvetica Neue', Arial, sans-serif;
-        color: rgb(68, 68, 68);
-      }
-    </style>
+	<link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-2.0.3.min.js"></script>
+    <script src="deviceResolutions.js"></script>
     <script src="aspectRatios.js"></script>
   </head>
   <body>
-    <h3>Aspect Ratio</h3>
+	<h3>Aspect Ratio</h3>
     <div id="screen">
-      <div class="height">Screen Height:</div><span></span>
-      <div class="width">Screen Width:</div><span></span>
-      <div class="aspectRatio">Screen Aspect Ratio:</div><span></span>
+	  <b><i>Your Current Display</i></b>
+      <div class="height">Height:</div><span></span>
+      <div class="width">Width:</div><span></span>
+      <div class="aspectRatio">Aspect Ratio:</div><span></span>
     </div>
-    <br>
-    <select id="dd">
-      <option value="2:3">2:3 (iPhone 4/4s landscape)</option>
-      <option value="3:2">3:2  (iPhone 4/4s portrait)</option>
-      <option value="3:4">3:4 (iPad landscape)</option>
-      <option value="4:3">4:3 (iPad portrait)</option>
-      <option value="3:5">3:5 (Samsung Galaxy SII landscape)</option>
-      <option value="5:3">5:3 (Samsung Galaxy SII portrait)</option>
-      <option value="9:16">9:16 (iPhone 5/5s landscape)</option>
-      <option value="16:9">16:9 (iPhone 5/5s portrait)</option>
-      <option value="10:16">10:16 (Galaxy Note landscape)</option>
-      <option value="16:10">16:10 (Galaxy Note portrait)</option>
-      <option value="40:71">40:71 (iPod Touch 5th Gen landscape)</option>
-      <option value="71:40">71:40 (iPod Touch 5th Gen portrait)</option>
-    </select>
-    <button id="ddBtn">
-      Set
-    </button>
+    
+    <hr>
+    
+	<div>
+		<b><i>Change Aspect Ratio</i></b><i style="font-size:12px;">(uses all available resolution)</i>
+			<select class="space" id="dd">
+			  <option value="2:3">2:3 (iPhone 4/4s landscape)</option>
+			  <option value="3:2">3:2  (iPhone 4/4s portrait)</option>
+			  <option value="3:4">3:4 (iPad landscape)</option>
+			  <option value="4:3">4:3 (iPad portrait)</option>
+			  <option value="3:5">3:5 (Samsung Galaxy SII landscape)</option>
+			  <option value="5:3">5:3 (Samsung Galaxy SII portrait)</option>
+			  <option value="9:16">9:16 (iPhone 5/5s landscape)</option>
+			  <option value="16:9">16:9 (iPhone 5/5s portrait)</option>
+			  <option value="10:16">10:16 (Galaxy Note landscape)</option>
+			  <option value="16:10">16:10 (Galaxy Note portrait)</option>
+			  <option value="40:71">40:71 (iPod Touch 5th Gen landscape)</option>
+			  <option value="71:40">71:40 (iPod Touch 5th Gen portrait)</option>
+			</select>
+		<button class="buttonStyle" id="ddBtn">
+		  Set Aspect Ratio
+		</button>
+		<hr class="dotted">
+		<input id="customAspect1" class="space textbox numberOnly"></input> : <input id="customAspect2" class="textbox numberOnly"></input>
+		
+		<button class="marginLeft18 buttonStyle" id="customArBtn">
+		  Set Custom Aspect Ratio
+		</button>
+	</div>
+
+	<hr>
+	
+	<div>
+		<b><i>Change Resolution</i></b>
+		<div class="space">Choose Device:</div>
+		<div class="space clear5"><select id="make"></select></div>
+		<div class="space clear5">
+			<select id="model">
+				<option value="1920x1080">Acer Iconia Tab W700  - 16:9 - 1920x1080</option>
+				<option value="1920x1200">Acer Iconia Tab A701  - 8:5 - 1920x1200</option>
+				<option value="1280x800">Acer Iconia Tab A500  - 8:5 - 1280x800</option>
+				<option value="1280x800">Acer Iconia Tab A501  - 8:5 - 1280x800</option>
+				<option value="1280x800">Acer Iconia Tab A510  - 8:5 - 1280x800</option>
+				<option value="1280x800">Acer Iconia Tab A511  - 8:5 - 1280x800</option>
+				<option value="1280x800">Acer Iconia Tab A210  - 8:5 - 1280x800</option>
+				<option value="1280x800">Acer Iconia Tab A211  - 8:5 - 1280x800</option>
+				<option value="1024x600">Acer Iconia Tab A110  - 128:75 - 1024x600</option>
+			</select>
+		</div>
+		<div class="space">
+			<input type="radio" name="mode" value="l">Landscape</input>
+			<input type="radio" name="mode" value="p" checked>Portrait</input>
+		</div>
+		<button class="buttonStyle" id="ddResBtn">
+		  Set Resolution
+		</button>
+		
+		<hr class="dotted">
+		<input id="customRes1" class="space textbox numberOnly"></input> : <input id="customRes2" class="textbox numberOnly"></input>
+		<button class="marginLeft18 buttonStyle" id="customResBtn">
+		  Set Custom Resolution
+		</button>
+	</div>
   </body>
 </html>
 
